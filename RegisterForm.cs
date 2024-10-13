@@ -14,7 +14,14 @@ namespace Student_Payment_Kiosk_02
     {
         public RegisterForm()
         {
+            InitializeComponent();
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
     }
 }

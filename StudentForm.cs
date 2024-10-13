@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Student_Payment_Kiosk_02
 {
-    public partial class RegForm : Form
+    public partial class StudentForm : Form
     {
-        public RegForm()
+        public StudentForm()
         {
             InitializeComponent();
         }
-
-        
     }
 }

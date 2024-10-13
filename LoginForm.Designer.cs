@@ -1,6 +1,6 @@
 ﻿namespace Student_Payment_Kiosk_02
 {
-    partial class RegisterForm
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -125,6 +125,7 @@
             this.linkLabel2.TabIndex = 9;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Click here to register";
+            this.linkLabel2.Click += new System.EventHandler(this.linkLabel2_Click);
             // 
             // label4
             // 
@@ -162,6 +163,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // loginBtn
             // 
@@ -174,14 +176,14 @@
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
             // 
-            // RegisterForm
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 412);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Name = "RegisterForm";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
             this.panel1.ResumeLayout(false);

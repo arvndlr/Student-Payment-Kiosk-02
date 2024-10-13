@@ -16,7 +16,7 @@ namespace Student_Payment_Kiosk_02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new WelcomeForm());
         }
     }
 }

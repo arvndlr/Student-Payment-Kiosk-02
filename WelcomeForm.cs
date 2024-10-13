@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Student_Payment_Kiosk_02
 {
-    public partial class LoginForm : Form
+    public partial class WelcomeForm : Form
     {
         private Font originalFont;
         private Font maximizedFont;
-        public LoginForm()
+        public WelcomeForm()
         {
             InitializeComponent();
 
@@ -43,10 +43,11 @@ namespace Student_Payment_Kiosk_02
             }
         }
 
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // Create and show the password entry form
-            PasswordForm passwordForm = new PasswordForm();
+            LoginForm passwordForm = new LoginForm();
             passwordForm.Show(); // Show as a modal dialog
         }
     }
