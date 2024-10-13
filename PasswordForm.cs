@@ -16,5 +16,6 @@ namespace Student_Payment_Kiosk_02
         {
             InitializeComponent();
         }
+
     }
 }
