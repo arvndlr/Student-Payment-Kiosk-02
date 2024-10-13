@@ -34,13 +34,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtRepassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,24 +106,26 @@
             this.loginBtn.TabIndex = 16;
             this.loginBtn.Text = "Register";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(270, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 30);
-            this.textBox1.TabIndex = 13;
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(270, 146);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(320, 30);
+            this.txtUsername.TabIndex = 13;
             // 
-            // textBox2
+            // txtRepassword
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(270, 281);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(320, 30);
-            this.textBox2.TabIndex = 15;
+            this.txtRepassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtRepassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepassword.Location = new System.Drawing.Point(270, 281);
+            this.txtRepassword.Name = "txtRepassword";
+            this.txtRepassword.PasswordChar = '*';
+            this.txtRepassword.Size = new System.Drawing.Size(320, 30);
+            this.txtRepassword.TabIndex = 15;
             // 
             // label2
             // 
@@ -164,29 +166,30 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Role";
             // 
-            // comboBox1
+            // cmbRole
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
             "Admin",
             "Cashier",
             "Student"});
-            this.comboBox1.Location = new System.Drawing.Point(270, 190);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(320, 33);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 21;
+            this.cmbRole.Location = new System.Drawing.Point(270, 190);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(320, 33);
+            this.cmbRole.Sorted = true;
+            this.cmbRole.TabIndex = 21;
             // 
-            // textBox3
+            // txtPassword
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(269, 237);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(320, 30);
-            this.textBox3.TabIndex = 23;
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(269, 237);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(320, 30);
+            this.txtPassword.TabIndex = 23;
             // 
             // label5
             // 
@@ -215,16 +218,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 482);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.loginBtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtRepassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -246,13 +249,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtRepassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
     }

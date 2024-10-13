@@ -47,6 +47,7 @@ namespace Student_Payment_Kiosk_02
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // Create and show the password entry form
+            this.Hide();
             LoginForm passwordForm = new LoginForm();
             passwordForm.Show(); // Show as a modal dialog
         }
