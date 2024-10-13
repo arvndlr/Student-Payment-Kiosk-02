@@ -50,10 +50,5 @@ namespace Student_Payment_Kiosk_02
                 tabPage2.Font = originalFont;
             }
         }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
