@@ -388,9 +388,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 24);
+            this.label6.Size = new System.Drawing.Size(62, 24);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Unit:";
+            this.label6.Text = "Units:";
             // 
             // tableLayoutPanel3
             // 
