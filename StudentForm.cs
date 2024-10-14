@@ -54,5 +54,9 @@ namespace Student_Payment_Kiosk_02
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
