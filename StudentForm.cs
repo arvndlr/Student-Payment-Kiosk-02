@@ -42,7 +42,8 @@ namespace Student_Payment_Kiosk_02
                 tableLayoutPanel2.RowStyles[3].Height = tableLayoutPanel2.Height / 6;
                 tableLayoutPanel2.RowStyles[4].Height = tableLayoutPanel2.Height / 6; // Set first row to half of the height
                 tableLayoutPanel2.RowStyles[5].Height = tableLayoutPanel2.Height / 6;
-            }
+
+                }
             else
             {
                 // Revert to the original font when not maximized
@@ -50,5 +51,7 @@ namespace Student_Payment_Kiosk_02
                 tabPage2.Font = originalFont;
             }
         }
+
+        
     }
 }
