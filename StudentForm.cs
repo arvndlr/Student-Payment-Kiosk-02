@@ -35,6 +35,7 @@ namespace Student_Payment_Kiosk_02
                 // Change the font to the maximized font
                 tabControl1.Font = maximizedFont;
                 tabPage2.Font = maximizedFont;
+                tableLayoutPanel1.Padding = new Padding(80, tableLayoutPanel1.Padding.Top, 80, tableLayoutPanel1.Padding.Bottom);
 
                 tableLayoutPanel2.RowStyles[0].Height = tableLayoutPanel2.Height / 6; // Set first row to half of the height
                 tableLayoutPanel2.RowStyles[1].Height = tableLayoutPanel2.Height / 6;
@@ -49,9 +50,9 @@ namespace Student_Payment_Kiosk_02
                 // Revert to the original font when not maximized
                 tabControl1.Font = originalFont;
                 tabPage2.Font = originalFont;
+                tableLayoutPanel1.Padding = new Padding(20, tableLayoutPanel1.Padding.Top, 20, tableLayoutPanel1.Padding.Bottom);
             }
         }
 
-        
     }
 }
