@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +7,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Student_Payment_Kiosk_02
 {
@@ -54,6 +58,123 @@ namespace Student_Payment_Kiosk_02
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string studentName = txtName.Text;
+            string studentSection = txtSection.Text;
+            string studentNumber = txtStudentNo.Text;
+            string program = txtProgram.Text;
+            string status = txtStatus.Text;
+            int units = int.Parse(txtUnits.Text);
+            string paymentPlan = txtPaymentPlan.Text; ;
+            string email = txtEmail.Text;
+            string username = txtUsername.Text;
+            decimal netAssessment = decimal.Parse(txtNetassessment.Text);
+
+            //tuitionfee data
+            string ps1 = paymentSched1.Text;
+            string ps2 = paymentSched2.Text;
+            string ps3 = paymentSched3.Text;
+            string ps4 = paymentSched4.Text;
+            string ps5 = paymentSched5.Text;
+
+            DateTime ps1DueDate = ps1Due.Value;
+            DateTime ps2DueDate = ps2Due.Value;
+            DateTime ps3DueDate = ps3Due.Value;
+            DateTime ps4DueDate = ps4Due.Value;
+            DateTime ps5DueDate = ps5Due.Value;
+
+            decimal ps1Amnt = decimal.Parse(ps1Amount.Text);
+            decimal ps2Amnt = decimal.Parse(ps1Amount.Text);
+            decimal ps3Amnt = decimal.Parse(ps1Amount.Text);
+            decimal ps4Amnt = decimal.Parse(ps1Amount.Text);
+            decimal ps5Amnt = decimal.Parse(ps1Amount.Text);
+
+            // Define the PostgreSQL connection string
+            string connectionString = "Host=localhost;Username=postgres;Password=Jrch-120423;Database=testStudentPaymentKioskDB";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Check if the username already exists
+                var checkUserCmd = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE username = @username", conn);
+                checkUserCmd.Parameters.AddWithValue("username", username);
+
+                object result = checkUserCmd.ExecuteScalar();
+                int userExists = Convert.ToInt32(result);
+
+                if (userExists > 0)
+                {
+                    MessageBox.Show("Username already exists");
+                    var cmd = new NpgsqlCommand("INSERT INTO studentinfo (studentid, name, section, program, status, units, username, email, paymentplan, netassessment) VALUES (@studentid, @name, @section, @program, @status, @units, @username, @email, @paymentplan,@netassessment)", conn);
+
+                    cmd.Parameters.AddWithValue("studentid", studentNumber);
+                    cmd.Parameters.AddWithValue("name", studentName);
+                    cmd.Parameters.AddWithValue("section", studentSection);
+                    cmd.Parameters.AddWithValue("program", program);
+                    cmd.Parameters.AddWithValue("status", status);
+                    cmd.Parameters.AddWithValue("units", units);  // Assuming it's an integer
+                    cmd.Parameters.AddWithValue("username", username);
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("paymentplan", paymentPlan);
+                    cmd.Parameters.AddWithValue("netassessment", netAssessment);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registration successful!");
+
+                        // Redirect to the login form
+                        this.Hide();
+                        LoginForm loginForm = new LoginForm();
+                        loginForm.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+
+                var tfcmd = new NpgsqlCommand("INSERT INTO tuitionfee (student_number, payment_sched, duedate, amount) VALUES (@student_number, @payment_sched, @duedate, @amount)", conn);
+
+                using (tfcmd)
+                {
+                    tfcmd.Parameters.AddWithValue("student_number", studentNumber);
+                    tfcmd.Parameters.AddWithValue("payment_sched", ps1);
+                    tfcmd.Parameters.AddWithValue("ps1DueDate", ps1DueDate);
+                    tfcmd.Parameters.AddWithValue("ps1Amnt", ps1Amnt);
+
+                    tfcmd.Parameters.AddWithValue("student_number", studentNumber);
+                    tfcmd.Parameters.AddWithValue("ps2", ps2);
+                    tfcmd.Parameters.AddWithValue("ps2DueDate", ps2DueDate);
+                    tfcmd.Parameters.AddWithValue("ps2Amnt", ps2Amnt);
+
+                    tfcmd.Parameters.AddWithValue("student_number", studentNumber);
+                    tfcmd.Parameters.AddWithValue("ps3", ps3);
+                    tfcmd.Parameters.AddWithValue("ps3DueDate", ps3DueDate);
+                    tfcmd.Parameters.AddWithValue("ps3Amnt", ps3Amnt);
+
+                    tfcmd.Parameters.AddWithValue("student_number", studentNumber);
+                    tfcmd.Parameters.AddWithValue("ps4", ps4);
+                    tfcmd.Parameters.AddWithValue("ps4DueDate", ps4DueDate);
+                    tfcmd.Parameters.AddWithValue("ps4Amnt", ps4Amnt);
+
+                    tfcmd.Parameters.AddWithValue("student_number", studentNumber);
+                    tfcmd.Parameters.AddWithValue("ps5", ps5);
+                    tfcmd.Parameters.AddWithValue("ps5DueDate", ps5DueDate);
+                    tfcmd.Parameters.AddWithValue("ps5Amnt", ps5Amnt);
+
+                    // Execute the command
+                    tfcmd.ExecuteNonQuery();
+                }
+                
+
+                
+            }
 
         }
     }
