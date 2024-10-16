@@ -145,28 +145,28 @@ namespace Student_Payment_Kiosk_02
                 {
                     tfcmd.Parameters.AddWithValue("student_number", studentNumber);
                     tfcmd.Parameters.AddWithValue("payment_sched", ps1);
-                    tfcmd.Parameters.AddWithValue("ps1DueDate", ps1DueDate);
-                    tfcmd.Parameters.AddWithValue("ps1Amnt", ps1Amnt);
+                    tfcmd.Parameters.AddWithValue("duedate", ps1DueDate);
+                    tfcmd.Parameters.AddWithValue("amount", ps1Amnt);
 
                     tfcmd.Parameters.AddWithValue("student_number", studentNumber);
-                    tfcmd.Parameters.AddWithValue("ps2", ps2);
-                    tfcmd.Parameters.AddWithValue("ps2DueDate", ps2DueDate);
-                    tfcmd.Parameters.AddWithValue("ps2Amnt", ps2Amnt);
+                    tfcmd.Parameters.AddWithValue("payment_sched", ps2);
+                    tfcmd.Parameters.AddWithValue("duedate", ps2DueDate);
+                    tfcmd.Parameters.AddWithValue("amount", ps2Amnt);
 
                     tfcmd.Parameters.AddWithValue("student_number", studentNumber);
-                    tfcmd.Parameters.AddWithValue("ps3", ps3);
-                    tfcmd.Parameters.AddWithValue("ps3DueDate", ps3DueDate);
-                    tfcmd.Parameters.AddWithValue("ps3Amnt", ps3Amnt);
+                    tfcmd.Parameters.AddWithValue("payment_sched", ps3);
+                    tfcmd.Parameters.AddWithValue("duedate", ps3DueDate);
+                    tfcmd.Parameters.AddWithValue("amount", ps3Amnt);
 
                     tfcmd.Parameters.AddWithValue("student_number", studentNumber);
-                    tfcmd.Parameters.AddWithValue("ps4", ps4);
-                    tfcmd.Parameters.AddWithValue("ps4DueDate", ps4DueDate);
-                    tfcmd.Parameters.AddWithValue("ps4Amnt", ps4Amnt);
+                    tfcmd.Parameters.AddWithValue("payment_sched", ps4);
+                    tfcmd.Parameters.AddWithValue("duedate", ps4DueDate);
+                    tfcmd.Parameters.AddWithValue("amount", ps4Amnt);
 
                     tfcmd.Parameters.AddWithValue("student_number", studentNumber);
-                    tfcmd.Parameters.AddWithValue("ps5", ps5);
-                    tfcmd.Parameters.AddWithValue("ps5DueDate", ps5DueDate);
-                    tfcmd.Parameters.AddWithValue("ps5Amnt", ps5Amnt);
+                    tfcmd.Parameters.AddWithValue("payment_sched", ps5);
+                    tfcmd.Parameters.AddWithValue("duedate", ps5DueDate);
+                    tfcmd.Parameters.AddWithValue("amount", ps5Amnt);
 
                     // Execute the command
                     tfcmd.ExecuteNonQuery();
