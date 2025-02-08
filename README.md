@@ -1,6 +1,5 @@
 # Student Payment Kiosk
 
-![Project Banner](https://via.placeholder.com/1000x300.png?text=Student+Payment+Kiosk)
 
 ## Overview
 The **Student Payment Kiosk** is a Windows Forms application designed to facilitate cashless transactions for educational institutions. It integrates **NFC technology** and **third-party payment solutions** (e.g., PayMongo) to allow students to conveniently pay their fees via an automated kiosk system. The system supports multiple roles, including **admin, cashier, and student**, and securely processes transactions using **PostgreSQL** as the database.
